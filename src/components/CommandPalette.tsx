@@ -42,7 +42,7 @@ export default function CommandPalette() {
     { id: "about", name: "About", action: () => scrollToSection("about"), icon: Icons.User, group: "Navigation" },
     { id: "projects", name: "Projects", action: () => scrollToSection("projects"), icon: Icons.Code, group: "Navigation" },
     { id: "skills", name: "Skills", action: () => scrollToSection("skills"), icon: Icons.FileText, group: "Navigation" },
-    { id: "github", name: "GitHub", action: () => window.open("https://github.com/Praroop-Anand", "_blank"), icon: Icons.GitHub, group: "Socials" },
+    { id: "github", name: "GitHub", action: () => window.open("https://github.com/praroop1435", "_blank"), icon: Icons.GitHub, group: "Socials" },
     { id: "linkedin", name: "LinkedIn", action: () => window.open("https://www.linkedin.com/in/praroop-anand", "_blank"), icon: Icons.LinkedIn, group: "Socials" },
     { id: "email", name: "Send Email", action: () => window.location.href = "mailto:anandpraroop@gmail.com", icon: Icons.Mail, group: "Socials" },
   ];
@@ -99,7 +99,7 @@ export default function CommandPalette() {
 
       <AnimatePresence>
         {open && (
-           <div className="cmd-overlay" onClick={() => setOpen(false)}>
+          <div className="cmd-overlay" onClick={() => setOpen(false)}>
             <motion.div
               className="cmd-dialog"
               onClick={(e) => e.stopPropagation()}
