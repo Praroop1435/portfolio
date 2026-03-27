@@ -1,7 +1,7 @@
-import type { Variants } from "framer-motion";
+import type { Variants, Transition } from "framer-motion";
 
 // Apple animations typically rely on spring physics for fluidity
-const macSpring = {
+const macSpring: Transition = {
   type: "spring",
   stiffness: 260,
   damping: 20,
