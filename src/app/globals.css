@@ -297,6 +297,7 @@ a:hover {
   display: flex;
   gap: 16px;
   align-items: center;
+  margin-top: 20px;
 }
 
 .hero-socials a {
@@ -306,12 +307,16 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 6px;
-  transition: color 0.2s;
+  transition: all 0.2s;
 }
 
 .hero-socials a:hover {
   color: var(--text-primary);
   opacity: 1;
+}
+
+.resume-cta svg {
+  color: var(--text-secondary); /* Match other social icons */
 }
 
 .hero-avatar {
