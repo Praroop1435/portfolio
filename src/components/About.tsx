@@ -1,74 +1,58 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp } from "@/lib/animations";
+import { fadeUp, viewportConfig } from "@/lib/animations";
 
-export default function About() {
+export default function Overview() {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "40px" }}>
-      {/* Left: Section Info */}
+    <section className="overview-section" id="about">
       <motion.div
+        className="overview-card"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={viewportConfig}
         variants={fadeUp}
       >
-        <div className="mono" style={{ fontSize: "11px", color: "var(--text-secondary)", marginBottom: "12px" }}>
-          03 // BACKGROUND
-        </div>
-        <div style={{ fontSize: "14px", fontWeight: 600, color: "var(--text-primary)" }}>
-          Education & History
-        </div>
-      </motion.div>
-
-      {/* Right: Content */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeUp}
-        transition={{ delay: 0.1 }}
-      >
-        <div style={{ fontSize: "14px", lineHeight: 1.6, color: "var(--text-secondary)", marginBottom: "32px", display: "flex", flexDirection: "column", gap: "16px" }}>
-          <p>
-            Currently pursuing my B.Tech in Information Technology at the Institute of Engineering & Management, Kolkata.
-          </p>
-          <p>
-            I specialize at the intersection of Machine Learning, NLP, and production AI systems. My work revolves around building robust architectures for data extraction, semantic processing, and serving high-performance inference APIs.
-          </p>
-        </div>
-
-        {/* Education Log */}
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "100px 1fr", 
-            padding: "16px 0", 
-            borderTop: "1px solid var(--border-color)",
-            alignItems: "center"
-          }}>
-            <div className="mono" style={{ fontSize: "11px", color: "var(--text-secondary)" }}>2023 - 2027</div>
-            <div>
-              <div style={{ fontSize: "14px", fontWeight: 500, color: "var(--text-primary)" }}>B.Tech — Information Tech</div>
-              <div style={{ fontSize: "13px", color: "var(--text-tertiary)" }}>Institute of Engineering & Management, Kolkata</div>
-            </div>
+        <div className="overview-item">
+          <div className="overview-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
           </div>
-          
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "100px 1fr", 
-            padding: "16px 0", 
-            borderTop: "1px solid var(--border-color)",
-            alignItems: "center"
-          }}>
-            <div className="mono" style={{ fontSize: "11px", color: "var(--text-secondary)" }}>2021 - 2023</div>
-            <div>
-              <div style={{ fontSize: "14px", fontWeight: 500, color: "var(--text-primary)" }}>12th Standard — Computer Science</div>
-              <div style={{ fontSize: "13px", color: "var(--text-tertiary)" }}>Chinmaya Vidyalaya, Bokaro</div>
-            </div>
+          <div className="overview-text">
+            <span className="overview-label">Location</span>
+            <span className="overview-value">Kolkata, West Bengal</span>
+          </div>
+        </div>
+
+        <div className="overview-item">
+          <div className="overview-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 10 3 12 0v-5" /></svg>
+          </div>
+          <div className="overview-text">
+            <span className="overview-label">Education</span>
+            <span className="overview-value">B.Tech, Information Technology</span>
+          </div>
+        </div>
+
+        <div className="overview-item">
+          <div className="overview-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
+          </div>
+          <div className="overview-text">
+            <span className="overview-label">Focus</span>
+            <span className="overview-value">AI/ML, LLMs, RAG Pipelines</span>
+          </div>
+        </div>
+
+        <div className="overview-item">
+          <div className="overview-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+          </div>
+          <div className="overview-text">
+            <span className="overview-label">Timezone</span>
+            <span className="overview-value">IST (UTC+5:30)</span>
           </div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 }

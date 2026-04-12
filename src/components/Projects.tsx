@@ -1,104 +1,108 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp } from "@/lib/animations";
+import { fadeUp, viewportConfig } from "@/lib/animations";
+import { skillLogos } from "@/components/Skills";
 
-const projectsData = [
+export const projectsData = [
   {
-    type: "Generative AI",
-    name: "YT RAG Chatbot",
-    desc: "A Retrieval-Augmented Generation chatbot enabling context-aware Q&A over YouTube video transcripts. Combines semantic chunking and LLM responses.",
-    tags: ["LangChain", "FastAPI", "Vector DB"],
-    link: "https://github.com/Praroop1435/YT-RAG-Chatbot"
+    name: "SiteSage",
+    desc: "An AI-powered B2B prospect research pipeline that scrapes websites via Cheerio and utilizes Groq APIs to instantly extract targeting data and personalize outreach openers.",
+    tags: ["React", "Next.js", "Groq API", "Cheerio", "Vanilla CSS"],
+    year: "2026",
+    link: "https://web.praroop.site",
   },
   {
-    type: "AI / NLP",
-    name: "LLM Resume Matcher",
-    desc: "An LLM-powered system matching resumes to JDs via semantic similarity, generating actionable career recommendations optimized for low-latency.",
-    tags: ["Transformers", "RAG", "FastAPI"],
-    link: "https://github.com/Praroop1435/LLM-Resume-Matcher"
+    name: "YTransformer",
+    desc: "Built a RAG system over 500+ YouTube transcripts using semantic chunking and FAISS vector retrieval, achieving sub-200ms query response time. Reduced LLM hallucinations by ~60% via grounded retrieval.",
+    tags: ["Python", "LangChain", "FAISS", "FastAPI", "Streamlit"],
+    year: "2026",
+    link: "https://github.com/Praroop1435/YTransformer",
   },
   {
-    type: "Automation",
-    name: "Workflow Engine",
-    desc: "Designed modular n8n workflows automating job search and filtering using LLM APIs — drastically reducing manual effort through event-driven automation.",
-    tags: ["n8n", "Webhooks", "APIs"],
-    link: "https://github.com/praroop1435"
+    name: "TRACE-ATS",
+    desc: "Built an LLM-powered system achieving 85%+ match accuracy across 100+ resume-JD pairs using semantic similarity and embedding-based retrieval. Optimized inference pipeline for 200+ req/hr.",
+    tags: ["Python", "RAG", "Embeddings", "Transformers", "FastAPI"],
+    year: "2025",
+    link: "https://github.com/Praroop1435/TRACE-ATS",
   },
   {
-    type: "Data Science",
-    name: "Churn Prediction",
-    desc: "End-to-end churn prediction framework with feature engineering and classification models. Generated actionable data-driven retention insights.",
-    tags: ["Pandas", "Scikit", "EDA"],
-    link: "https://house-price-prediction-1-bgmo.onrender.com/"
-  }
+    name: "JobFlow Engine",
+    desc: "Designed 5+ modular n8n workflows automating job search, filtering, and ranking using LLM APIs and event-driven webhook triggers. Reduced manual effort by ~80%.",
+    tags: ["TypeScript", "Python", "JavaScript", "HTML", "CSS", "n8n", "LLM APIs", "Webhooks"],
+    year: "2026",
+    link: "https://github.com/praroop1435",
+  },
+  {
+    name: "ChurnSense",
+    desc: "End-to-end churn prediction framework on 10,000+ records. Benchmarked 4 models, achieving AUC-ROC of 0.91 with XGBoost. Surfaced top 5 churn drivers via SHAP analysis.",
+    tags: ["Python", "Jupyter Notebook", "Scikit-learn", "XGBoost", "Pandas", "SHAP"],
+    year: "2025",
+    link: "https://github.com/praroop1435",
+  },
+  {
+    name: "PriceVision",
+    desc: "End-to-end deep learning pipeline across 1,000+ property records, R² of 0.88 and MAE within 3.5%. Deployed live on Render via FastAPI and Streamlit.",
+    tags: ["Python", "Jupyter Notebook", "TensorFlow", "FastAPI", "Streamlit"],
+    year: "2025",
+    link: "https://house-price-prediction-1-bgmo.onrender.com/",
+  },
 ];
 
 export default function Projects() {
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      {/* Header */}
-      <div style={{
-        padding: "16px 24px",
-        borderBottom: "1px solid var(--border-color)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between"
-      }}>
-        <div style={{ fontSize: "14px", fontWeight: 600, color: "var(--text-primary)" }}>Selected Projects</div>
-        <div className="mono" style={{ fontSize: "11px", color: "var(--text-secondary)" }}>02 // WORK</div>
-      </div>
-
-      {/* Grid */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-        {projectsData.map((project, idx) => (
-          <motion.a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={project.name}
-            className="bento-cell interactive"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-20px" }}
-            variants={fadeUp}
-            transition={{ delay: idx * 0.1 }}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              textDecoration: "none",
-              borderBottom: idx < projectsData.length - 2 ? "1px solid var(--border-color)" : "none",
-              borderRight: idx % 2 === 0 ? "1px solid var(--border-color)" : "none",
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "12px" }}>
-              <div className="mono" style={{ fontSize: "10px", color: "var(--text-secondary)" }}>
-                {project.type}
-              </div>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
+    <section className="projects-section" id="projects">
+      {projectsData.map((project, idx) => (
+        <motion.a
+          key={project.name}
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-item"
+          style={{ display: "block", textDecoration: "none" }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={fadeUp}
+          transition={{ delay: idx * 0.05 }}
+        >
+          <div className="project-header">
+            <h3 className="project-name">{project.name}</h3>
+            <svg className="project-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </div>
+          <p className="project-desc">{project.desc}</p>
+          <div className="project-meta">
+            <span className="project-year">{project.year}</span>
+            <div className="experience-tags">
+              {project.tags.map((tag) => {
+                const hasLogo = !!skillLogos[tag];
+                return (
+                  <span key={tag} className={`tech-tag ${hasLogo ? "tech-tag-with-logo" : ""}`}>
+                    {hasLogo && (
+                      <img
+                        src={skillLogos[tag]}
+                        alt={tag}
+                        width={18}
+                        height={18}
+                        className="tech-tag-logo"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.parentElement?.classList.remove('tech-tag-with-logo');
+                        }}
+                      />
+                    )}
+                    {tag}
+                  </span>
+                );
+              })}
             </div>
-
-            <h3 style={{ fontSize: "15px", fontWeight: 600, color: "var(--text-primary)", marginBottom: "8px" }}>
-              {project.name}
-            </h3>
-
-            <p style={{ fontSize: "13px", lineHeight: 1.5, color: "var(--text-tertiary)", flex: 1, marginBottom: "20px" }}>
-              {project.desc}
-            </p>
-
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-              {project.tags.map(tag => (
-                <span key={tag} className="mono" style={{ fontSize: "10px", color: "var(--text-secondary)" }}>
-                  [{tag}]
-                </span>
-              ))}
-            </div>
-          </motion.a>
-        ))}
-      </div>
-    </div>
+          </div>
+        </motion.a>
+      ))}
+    </section>
   );
 }

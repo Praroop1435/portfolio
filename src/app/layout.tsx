@@ -1,13 +1,24 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
-import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Loader from "@/components/Loader";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Praroop Anand — AI Engineer",
-  description: "Portfolio of Praroop Anand — specialized in AI, ML, and scalable pipelines.",
+  title: "Praroop",
+  description: "AI Engineer — building ML pipelines, LLM-powered systems, and agentic AI workflows.",
+  icons: {
+    icon: "https://github.com/praroop1435.png",
+    shortcut: "https://github.com/praroop1435.png",
+    apple: "https://github.com/praroop1435.png",
+  },
+  openGraph: {
+    title: "Praroop",
+    description: "Explore projects, skills, and contact info.",
+    type: "website",
+    url: "https://praroop.site",
+  },
 };
 
 export default function RootLayout({
@@ -16,14 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <Loader />
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <Loader />
+          <Navbar />
+          <main className="site-container">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

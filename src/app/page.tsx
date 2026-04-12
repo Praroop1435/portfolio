@@ -1,38 +1,38 @@
 import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
+import Overview from "@/components/About";
 import Projects from "@/components/Projects";
-import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Education from "@/components/Education";
+import Skills from "@/components/Skills";
+import Certifications from "@/components/Certifications";
+import Contact from "@/components/Contact";
+import SectionStripe from "@/components/SectionHeader";
 
 export default function Home() {
   return (
-    <div className="bento-container" id="top">
-      {/* ROW 1: Hero Profile */}
-      <div className="bento-row">
-        <div className="bento-cell" id="hero">
-          <Hero />
-        </div>
-      </div>
+    <>
+      <Hero />
 
-      {/* ROW 2: About / Experience abstract */}
-      <div className="bento-row">
-        <div className="bento-cell" id="about">
-          <About />
-        </div>
-      </div>
+      <SectionStripe label="Overview" />
+      <Overview />
 
-      {/* ROW 3: Projects */}
-      <div className="bento-row">
-        <div className="bento-cell" id="projects" style={{ padding: 0 }}>
-          <Projects />
-        </div>
-      </div>
+      <SectionStripe label="Projects" />
+      <Projects />
 
-      {/* ROW 4: Skills Matrix */}
-      <div className="bento-row">
-        <div className="bento-cell" id="skills" style={{ padding: 0 }}>
-          <Skills />
-        </div>
-      </div>
-    </div>
+      <SectionStripe label="Experience" />
+      <Experience />
+
+      <SectionStripe label="Education" />
+      <Education />
+
+      <SectionStripe label="Tech Stack" />
+      <Skills />
+
+      <SectionStripe label="Certifications" />
+      <Certifications />
+
+      <SectionStripe label="Contact" />
+      <Contact />
+    </>
   );
 }
