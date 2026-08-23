@@ -12,7 +12,7 @@ interface ExperienceEntry {
 
 const experienceData: ExperienceEntry[] = [
   {
-    date: "May 2025 – Present",
+    date: "May 2026 – Present",
     title: "AI Automation Developer (Intern)",
     subtitle: "Relu Consultancy — Remote",
     points: [
