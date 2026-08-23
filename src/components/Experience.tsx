@@ -3,12 +3,24 @@
 import { motion } from "framer-motion";
 import { fadeUp, viewportConfig } from "@/lib/animations";
 
-const experienceData = [
+interface ExperienceEntry {
+  date: string;
+  title: string;
+  subtitle: string;
+  points: string[];
+}
+
+const experienceData: ExperienceEntry[] = [
   {
-    date: "2025",
-    title: "Event Coordinator — HackOasis Hackathon",
-    subtitle: "Kolkata, India",
-    desc: "Managed a large-scale hackathon with 800+ participants across 100+ teams. Led a 10-member ops team in a 24-hour high-pressure environment, ensuring 100% on-schedule execution across all 6 event phases.",
+    date: "May 2025 – Present",
+    title: "AI Automation Developer (Intern)",
+    subtitle: "Relu Consultancy — Remote",
+    points: [
+      "Spearheaded the development of 6+ production-grade AI automation systems and full-stack SaaS platforms (including InsightFlow AI and AI Social Automate), driving significant operational efficiency for international clients.",
+      "Architected and deployed scalable backend APIs, RAG chatbot engines, and multi-channel orchestration pipelines utilizing Python frameworks (FastAPI, Django, Flask) and LLMs (Claude, GPT-4o, Gemini) to process over 1,000 queries weekly.",
+      "Engineered automated workflows for lead enrichment, social media scraping, and inventory management using n8n, Crawl4AI, and Celery, reducing manual processing time by up to 85%.",
+      "Managed end-to-end deployment of 5+ applications on Hetzner VPS and Google Cloud Run using Docker, ensuring 99.9% uptime and reliable integrations with 4+ external APIs (Stripe, WhatsApp) and databases (PostgreSQL, MongoDB).",
+    ],
   },
 ];
 
@@ -29,10 +41,17 @@ export default function Experience() {
           <div className="experience-content">
             <h3 className="experience-title">{item.title}</h3>
             <div className="experience-subtitle">{item.subtitle}</div>
-            <p className="experience-desc">{item.desc}</p>
+            <ul className="experience-list">
+              {item.points.map((pt, pIdx) => (
+                <li key={pIdx} className="experience-list-item">
+                  {pt}
+                </li>
+              ))}
+            </ul>
           </div>
         </motion.div>
       ))}
     </section>
   );
 }
+

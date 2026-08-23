@@ -1,0 +1,149 @@
+%-------------------------
+% Resume - Praroop Anand (ATS-Optimized)
+%-------------------------
+\documentclass[letterpaper,10pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}\fancyhf{}\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}\addtolength{\topmargin}{-.55in}\addtolength{\textheight}{1.1in}
+\urlstyle{same}\raggedbottom\raggedright\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{3.60004pt}
+
+\titleformat{\section}{\vspace{-5pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{\vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\ \textit{\small#3} & \textit{\small#4} \\
+  \end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeProjectHeading}[2]{\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2 \end{tabular*}\vspace{-7pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Praroop Anand} \\[4pt]
+  \small
+  \href{mailto:anandpraroop@gmail.com}{anandpraroop@gmail.com} \quad
+  +91-8210118421 \quad
+  \href{https://www.linkedin.com/in/praroop1435}{linkedin.com/in/praroop1435} \quad
+  \href{https://github.com/Praroop1435}{github.com/Praroop1435} \quad
+  \href{https://praroop.site}{praroop.site}
+\end{center}
+
+%----------- SUMMARY -----------
+\section{Summary}
+\vspace{2pt}
+\small{AI Automation Developer and second-year IT student with 3+ months of hands-on production experience building agentic RAG pipelines, LLM-powered SaaS platforms, and multi-channel automation systems. Proficient in Python, FastAPI, LangChain, LangGraph, OpenAI, Anthropic Claude, PostgreSQL, and Docker. Delivered 7+ client-facing projects in production on Hetzner VPS and Google Cloud Run; reduced manual effort by up to 85\%. Actively seeking roles in AI/ML engineering, backend development, or LLM application development.}
+
+%----------- TECHNICAL SKILLS -----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in,label={}]
+  \small{\item{
+    \textbf{Languages \& Databases}{: Python, C++, TypeScript, SQL, PostgreSQL, MongoDB} \\
+    \textbf{AI / ML / DL}{: PyTorch, TensorFlow, Scikit-learn, Transformers, XGBoost, ANN, CNN, BERT, Prompt Engineering} \\
+    \textbf{GenAI \& LLMs}{: LangChain, LangGraph, RAG, OpenAI API, Anthropic Claude API, Gemini API, Groq API, Hugging Face, FAISS, pgvector, ChromaDB, Sentence-Transformers, RAGAS} \\
+    \textbf{Frameworks \& Backend}{: FastAPI, Flask, Django 5.1, DRF, Celery, Redis, Firebase Auth, JWT, REST APIs} \\
+    \textbf{Scraping \& Automation}{: Playwright, curl-cffi, Crawl4AI, BeautifulSoup, Telethon, Baileys, n8n, Webhooks, Airtable} \\
+    \textbf{Deployment \& DevOps}{: Docker, PM2, Hetzner VPS, Google Cloud Run, GitHub Actions, Nginx, CI/CD} \\
+    \textbf{Data \& Tools}{: Pandas, NumPy, Matplotlib, Seaborn, MLflow, Git, Google Sheets API, SerpAPI}
+  }}
+\end{itemize}
+
+%----------- EXPERIENCE -----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Relu Consultancy}{Remote}
+    {AI Automation Developer (Intern)}{May 2025 -- Present}
+  \resumeItemListStart
+    \resumeItem{Spearheaded the development of 6+ production-grade AI automation systems and full-stack SaaS platforms (including InsightFlow AI and AI Social Automate), driving significant operational efficiency for international clients.}
+    \resumeItem{Architected and deployed scalable backend APIs, RAG chatbot engines, and multi-channel orchestration pipelines utilizing Python frameworks (FastAPI, Django, Flask) and LLMs (Claude, GPT-4o, Gemini) to process over 1,000 queries weekly.}
+    \resumeItem{Engineered automated workflows for lead enrichment, social media scraping, and inventory management using n8n, Crawl4AI, and Celery, reducing manual processing time by up to 85\%.}
+    \resumeItem{Managed end-to-end deployment of 5+ applications on Hetzner VPS and Google Cloud Run using Docker, ensuring 99.9\% uptime and reliable integrations with 4+ external APIs (Stripe, WhatsApp) and databases (PostgreSQL, MongoDB).}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- PROJECTS -----------
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{\href{https://portal.e360insurance.com/}{InsightFlow AI}} (US Insurance SaaS) $|$ \emph{FastAPI, React/Vite, PostgreSQL, pgvector, Claude}}{}
+  \resumeItemListStart
+    \resumeItem{Developed a full-stack platform delivering 5 AI modules (RAG chatbot, Policy Summarizer, Sales Assistant) for a US agency.}
+    \resumeItem{Benchmarked retrieval quality with RAGAS, achieving a 92\% accuracy score, and implemented semantic search using pgvector to reduce query latency by 40\%.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{\href{https://aisocialautomate.com}{AI Social Automate}} (Social Media Platform) $|$ \emph{Django 5.1, PostgreSQL, MongoDB, Celery, Redis}}{}
+  \resumeItemListStart
+    \resumeItem{Designed backend with 21 SQL tables, 7 NoSQL collections, Firebase JWT auth, and task queues.}
+    \resumeItem{Integrated Stripe/Razorpay webhooks with 100\% idempotency and implemented lead-scraping connectors for 5 major social platforms, acquiring 500+ daily leads.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Lead Enrichment Pipeline} $|$ \emph{Flask, Gemini 2.5 Flash, Crawl4AI, SerpAPI}}{}
+  \resumeItemListStart
+    \resumeItem{Engineered a nightly cron-triggered API that auto-enriches 100+ client leads from SOW documents and web scrapes.}
+    \resumeItem{Summarized all data into structured JSON with Gemini, \textbf{reducing manual research time by $\sim$85\%}.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Inventory \& Email Automation Systems} $|$ \emph{n8n, GPT-4o-mini, WhatsApp, Telegram, ClickUp}}{}
+  \resumeItemListStart
+    \resumeItem{Architected a multi-channel watch offer system integrating messaging webhooks with intent extraction via GPT-4o-mini, successfully processing 200+ offers weekly.}
+    \resumeItem{Configured 10+ workflows to classify freight inquiries, deduplicating leads by 30\% and logging 100\% of outcomes with AI-generated audit reasons.}
+  \resumeItemListEnd
+  
+  \resumeProjectHeading
+    {\textbf{AviationOps Dashboard} $|$ \emph{Airtable, Fillout}}{}
+  \resumeItemListStart
+    \resumeItem{Redesigned schema for a US FBO to display 50+ live service orders daily, connecting check-in forms to auto-populate production records and saving 15 hours of manual entry per week.}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Vinted Scout} $|$ \emph{Python, curl-cffi, Playwright, MongoDB, Discord API}}{}
+  \resumeItemListStart
+    \resumeItem{Developed a Cloudflare-bypass scraper with a custom LFPI underpricing score to monitor 5,000+ items daily, automating Discord reports and like-tracking to secure deals 3x faster.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%----------- EDUCATION -----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Institute of Engineering and Management}{Kolkata, India}
+    {B.Tech, Information Technology}{Aug 2023 -- 2027}
+  \\[0.8em]
+  \resumeSubheading
+    {Chinmaya Vidyalaya}{Bokaro, India}
+    {Class XII: 80\%}{2023 / 2021}
+\resumeSubHeadingListEnd
+
+%----------- CERTIFICATIONS -----------
+\section{Certifications}
+\begin{itemize}[leftmargin=14pt,itemsep=1pt]
+  \item \textbf{Google}: Generative AI Fundamentals (Google Cloud Skills Boost)
+  \item \textbf{DeepLearning.AI}: LangChain for LLM Application Development (Coursera)
+\end{itemize}
+
+\end{document}

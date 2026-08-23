@@ -6,9 +6,6 @@ import { fadeUp, viewportConfig } from "@/lib/animations";
 const certs = [
   { provider: "Google", name: "Generative AI Fundamentals (Google Cloud Skills Boost)" },
   { provider: "DeepLearning.AI", name: "LangChain for LLM Application Development (Coursera)" },
-  { provider: "DeepLearning.AI", name: "Building Agentic RAG with LlamaIndex (Coursera)" },
-  { provider: "Databricks", name: "Generative AI Fundamentals" },
-  { provider: "Self-Paced", name: "100 Days of ML, 100 Days of DL" },
 ];
 
 export default function Certifications() {

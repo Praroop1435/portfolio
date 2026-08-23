@@ -5,7 +5,7 @@ import { fadeUp, viewportConfig } from "@/lib/animations";
 
 const educationData = [
   {
-    date: "2023 – Present",
+    date: "2023 – 2027",
     title: "B.Tech — Information Technology",
     subtitle: "Institute of Engineering and Management, Kolkata",
     desc: "Pursuing undergraduate degree in Information Technology with focus on AI/ML, Data Science, and Software Engineering.",

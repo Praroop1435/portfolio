@@ -19,7 +19,7 @@ export default function Overview() {
           </div>
           <div className="overview-text">
             <span className="overview-label">Location</span>
-            <span className="overview-value">Kolkata, West Bengal</span>
+            <span className="overview-value">India</span>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ export default function Overview() {
           </div>
           <div className="overview-text">
             <span className="overview-label">Focus</span>
-            <span className="overview-value">AI/ML, LLMs, RAG Pipelines</span>
+            <span className="overview-value">Agentic RAG, LLM SaaS & Automation</span>
           </div>
         </div>
 

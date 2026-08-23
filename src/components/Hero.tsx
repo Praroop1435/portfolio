@@ -26,7 +26,7 @@ export default function Hero() {
               </svg>
             </span>
           </h1>
-          <p className="hero-role">AI Engineer — Building Intelligent Systems</p>
+          <p className="hero-role">AI Automation Developer — Building Agentic Workflows & Production SaaS</p>
 
           <div className="hero-socials">
             <a href="https://github.com/praroop1435" target="_blank" rel="noopener noreferrer">

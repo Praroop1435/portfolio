@@ -6,8 +6,8 @@ import Loader from "@/components/Loader";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Praroop",
-  description: "AI Engineer — building ML pipelines, LLM-powered systems, and agentic AI workflows.",
+  title: "Praroop Anand — AI Automation Developer",
+  description: "AI Automation Developer — Agentic RAG pipelines, LLM SaaS platforms, and multi-channel automation systems.",
   icons: {
     icon: "https://github.com/praroop1435.png",
     shortcut: "https://github.com/praroop1435.png",
