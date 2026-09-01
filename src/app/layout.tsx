@@ -7,18 +7,42 @@ import Loader from "@/components/Loader";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Praroop Anand — AI Automation Developer",
+  metadataBase: new URL("https://praroop.site"),
+  title: {
+    default: "Praroop Anand — AI Automation Developer",
+    template: "%s | Praroop Anand",
+  },
   description: "AI Automation Developer — Agentic RAG pipelines, LLM SaaS platforms, and multi-channel automation systems.",
+  authors: [{ name: "Praroop Anand", url: "https://praroop.site" }],
+  creator: "Praroop Anand",
+  keywords: [
+    "Praroop Anand",
+    "AI Automation Developer",
+    "Agentic RAG",
+    "LLM SaaS",
+    "Automation Engineer",
+    "FastAPI",
+    "Python",
+    "Next.js",
+  ],
   icons: {
     icon: "https://github.com/praroop1435.png",
     shortcut: "https://github.com/praroop1435.png",
     apple: "https://github.com/praroop1435.png",
   },
   openGraph: {
-    title: "Praroop",
-    description: "Explore projects, skills, and contact info.",
-    type: "website",
+    title: "Praroop Anand — AI Automation Developer",
+    description: "Building Agentic Workflows & Production AI SaaS — RAG pipelines, LLM platforms, and automation systems.",
     url: "https://praroop.site",
+    siteName: "Praroop Anand",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Praroop Anand — AI Automation Developer",
+    description: "Building Agentic Workflows & Production AI SaaS — RAG pipelines, LLM platforms, and automation systems.",
+    creator: "@praroop1435",
   },
 };
 
