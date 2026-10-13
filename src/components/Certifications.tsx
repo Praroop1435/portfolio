@@ -23,7 +23,7 @@ export default function Certifications() {
         >
           <div className="cert-bullet" />
           <div className="cert-text">
-            <span className="cert-provider">{cert.provider}</span> — {cert.name}
+            <span className="cert-provider">{cert.provider}</span>: {cert.name}
           </div>
         </motion.div>
       ))}

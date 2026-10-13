@@ -14,12 +14,15 @@ export default function Contact() {
       >
         <p className="contact-text">
           If you&apos;re interested in collaborating and building cool things, feel free
-          to drop me a message on{" "}
+          to reach out on{" "}
+          <a href="https://x.com/PraroopX" target="_blank" rel="noopener noreferrer">
+            @PraroopX
+          </a>,{" "}
           <a href="https://www.linkedin.com/in/praroop1435" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>{" "}
           or send an{" "}
-          <a href="mailto:anandpraroop@gmail.com">Email</a>.
+          <a href="mailto:anandpraroop@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>.
           I&apos;ll get back to you within 2 business days. Always open to new ideas and projects!
         </p>
       </motion.div>

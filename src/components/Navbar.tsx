@@ -19,7 +19,7 @@ export default function Navbar() {
           <CommandPalette />
           <button
             className="theme-toggle"
-            onClick={toggle}
+            onClick={(e) => toggle(e)}
             aria-label="Toggle theme"
             title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
           >

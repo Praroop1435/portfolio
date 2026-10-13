@@ -4,20 +4,21 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
+import SocialDock from "@/components/SocialDock";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://praroop.site"),
   title: {
-    default: "Praroop Anand — AI Automation Developer",
+    default: "Praroop Anand",
     template: "%s | Praroop Anand",
   },
-  description: "AI Automation Developer — Agentic RAG pipelines, LLM SaaS platforms, and multi-channel automation systems.",
+  description: "AI Engineer - Focused on Scalable Backend Architecture, AI Agents, and multi-channel automation systems.",
   authors: [{ name: "Praroop Anand", url: "https://praroop.site" }],
   creator: "Praroop Anand",
   keywords: [
     "Praroop Anand",
-    "AI Automation Developer",
+    "AI Engineer",
     "Agentic RAG",
     "LLM SaaS",
     "Automation Engineer",
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
     apple: "https://github.com/praroop1435.png",
   },
   openGraph: {
-    title: "Praroop Anand — AI Automation Developer",
-    description: "Building Agentic Workflows & Production AI SaaS — RAG pipelines, LLM platforms, and automation systems.",
+    title: "Praroop Anand | AI Engineer",
+    description: "Building Agentic Workflows & Production AI SaaS: RAG pipelines, LLM platforms, and automation systems.",
     url: "https://praroop.site",
     siteName: "Praroop Anand",
     locale: "en_US",
@@ -40,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Praroop Anand — AI Automation Developer",
-    description: "Building Agentic Workflows & Production AI SaaS — RAG pipelines, LLM platforms, and automation systems.",
-    creator: "@praroop1435",
+    title: "Praroop Anand | AI Engineer",
+    description: "Building Agentic Workflows & Production AI SaaS: RAG pipelines, LLM platforms, and automation systems.",
+    creator: "@PraroopX",
   },
 };
 
@@ -53,7 +54,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
@@ -66,6 +67,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Loader />
           <Navbar />
+          <SocialDock />
           <main className="site-container">
             {children}
           </main>

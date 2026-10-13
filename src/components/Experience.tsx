@@ -12,9 +12,9 @@ interface ExperienceEntry {
 
 const experienceData: ExperienceEntry[] = [
   {
-    date: "May 2026 – Present",
+    date: "May 2026 - Present",
     title: "AI Automation Developer (Intern)",
-    subtitle: "Relu Consultancy — Remote",
+    subtitle: "Relu Consultancy, Remote",
     points: [
       "Spearheaded the development of 6+ production-grade AI automation systems and full-stack SaaS platforms (including InsightFlow AI and AI Social Automate), driving significant operational efficiency for international clients.",
       "Architected and deployed scalable backend APIs, RAG chatbot engines, and multi-channel orchestration pipelines utilizing Python frameworks (FastAPI, Django, Flask) and LLMs (Claude, GPT-4o, Gemini) to process over 1,000 queries weekly.",
@@ -40,7 +40,18 @@ export default function Experience() {
           <div className="experience-date">{item.date}</div>
           <div className="experience-content">
             <h3 className="experience-title">{item.title}</h3>
-            <div className="experience-subtitle">{item.subtitle}</div>
+            <div className="experience-subtitle">
+              <a
+                href="https://reluconsultancy.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover-underline"
+                style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}
+              >
+                Relu Consultancy
+              </a>
+              , Remote
+            </div>
             <ul className="experience-list">
               {item.points.map((pt, pIdx) => (
                 <li key={pIdx} className="experience-list-item">

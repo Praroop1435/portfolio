@@ -21,11 +21,13 @@ const Icons = {
   Layers: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>,
   Award: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" /></svg>,
   Mail: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>,
+  Twitter: <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>,
   GitHub: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>,
   LinkedIn: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>,
   Briefcase: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>,
   GradCap: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 10 3 12 0v-5" /></svg>,
   Terminal: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" /></svg>,
+  FileText: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><line x1="10" y1="9" x2="8" y2="9" /></svg>,
 };
 
 export default function CommandPalette() {
@@ -56,22 +58,27 @@ export default function CommandPalette() {
   const projectCommands: Command[] = projectsData.map((project) => ({
     id: `project-${project.name.toLowerCase().replace(/\s+/g, '-')}`,
     name: project.name,
-    action: () => scrollToSection("projects"),
+    action: () => {
+      setOpen(false);
+      window.open(project.link, "_blank", "noopener,noreferrer");
+    },
     icon: Icons.Code,
     group: "Projects" as const,
   }));
 
   const commands: Command[] = [
     { id: "home", name: "Home", action: () => { setOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }, icon: Icons.Home, group: "Navigation" },
+    { id: "resume", name: "View Resume", action: () => { setOpen(false); window.open("https://drive.google.com/file/d/1NSu7p3x2sq_NsbSL1pleABDMyFTrll89/view?usp=sharing", "_blank", "noopener,noreferrer"); }, icon: Icons.FileText, group: "Navigation" },
     { id: "about", name: "About", action: () => scrollToSection("about"), icon: Icons.User, group: "Sections" },
     { id: "projects", name: "Projects", action: () => scrollToSection("projects"), icon: Icons.Code, group: "Sections" },
     { id: "experience", name: "Experience", action: () => scrollToSection("experience"), icon: Icons.Briefcase, group: "Sections" },
     { id: "education", name: "Education", action: () => scrollToSection("education"), icon: Icons.GradCap, group: "Sections" },
     { id: "skills", name: "Tech Stack", action: () => scrollToSection("skills"), icon: Icons.Layers, group: "Sections" },
     { id: "certs", name: "Certifications", action: () => scrollToSection("certifications"), icon: Icons.Award, group: "Sections" },
-    { id: "github", name: "GitHub", action: () => { setOpen(false); window.open("https://github.com/praroop1435", "_blank"); }, icon: Icons.GitHub, group: "Socials" },
-    { id: "linkedin", name: "LinkedIn", action: () => { setOpen(false); window.open("https://www.linkedin.com/in/praroop1435", "_blank"); }, icon: Icons.LinkedIn, group: "Socials" },
-    { id: "email", name: "Send Email", action: () => { setOpen(false); window.location.href = "mailto:anandpraroop@gmail.com"; }, icon: Icons.Mail, group: "Socials" },
+    { id: "github", name: "GitHub", action: () => { setOpen(false); window.open("https://github.com/praroop1435", "_blank", "noopener,noreferrer"); }, icon: Icons.GitHub, group: "Socials" },
+    { id: "linkedin", name: "LinkedIn", action: () => { setOpen(false); window.open("https://www.linkedin.com/in/praroop1435", "_blank", "noopener,noreferrer"); }, icon: Icons.LinkedIn, group: "Socials" },
+    { id: "x", name: "X (@PraroopX)", action: () => { setOpen(false); window.open("https://x.com/PraroopX", "_blank", "noopener,noreferrer"); }, icon: Icons.Twitter, group: "Socials" },
+    { id: "email", name: "Send Email", action: () => { setOpen(false); window.open("mailto:anandpraroop@gmail.com", "_blank", "noopener,noreferrer"); }, icon: Icons.Mail, group: "Socials" },
     ...projectCommands,
     ...skillCommands,
   ];

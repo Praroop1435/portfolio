@@ -5,16 +5,10 @@ import { fadeUp, viewportConfig } from "@/lib/animations";
 
 const educationData = [
   {
-    date: "2023 – 2027",
-    title: "B.Tech — Information Technology",
+    date: "2023 - Present",
+    title: "B.Tech, Information Technology",
     subtitle: "Institute of Engineering and Management, Kolkata",
     desc: "Pursuing undergraduate degree in Information Technology with focus on AI/ML, Data Science, and Software Engineering.",
-  },
-  {
-    date: "2021 – 2023",
-    title: "Class XII — Computer Science (80%)",
-    subtitle: "Chinmaya Vidyalaya, Bokaro",
-    desc: "Completed senior secondary education with a strong foundation in Mathematics and Computer Science.",
   },
 ];
 
