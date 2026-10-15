@@ -38,12 +38,30 @@ export const metadata: Metadata = {
     siteName: "Praroop Anand",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Praroop Anand | AI Engineer Portfolio Preview",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@PraroopX",
+    creator: "@PraroopX",
     title: "Praroop Anand | AI Engineer",
     description: "Building Agentic Workflows & Production AI SaaS: RAG pipelines, LLM platforms, and automation systems.",
-    creator: "@PraroopX",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Praroop Anand | AI Engineer Portfolio Preview",
+      },
+    ],
   },
 };
 
